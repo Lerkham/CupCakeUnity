@@ -28,4 +28,9 @@ public class MoverMosca : MonoBehaviour
             velocidad++;
         }
     }
+    public void ReiniciarEnemigo()
+    {
+        
+    }
+
 }

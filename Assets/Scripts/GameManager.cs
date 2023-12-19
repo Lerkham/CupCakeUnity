@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     int Tiempo, Puntos;
     [SerializeField] GameObject Texto, Boton, Personaje, Fuego, Mosca;
     bool Cronometro;
+    [SerializeField] MoverMosca Enemigo;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +44,8 @@ public class GameManager : MonoBehaviour
         Texto.SetActive(false);
         Boton.SetActive(false);
         Tiempo = 0;
+        Cronometro = true;
+        Enemigo.ReiniciarEnemigo();
     }
 }
 
