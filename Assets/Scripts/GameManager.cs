@@ -6,7 +6,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instancia;
-    [SerializeField] float tiempo;
+    [SerializeField] public float tiempo;
     [SerializeField] int Puntos;
     [SerializeField] public int puntuacionActual, mejorPuntuacion;
     [SerializeField] GameObject Texto, Boton, Personaje, Fuego, Mosca;
@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
         Boton.SetActive(false);
         Texto.SetActive(false);
         mejorPuntuacion = PlayerPrefs.GetInt("mejorPuntuacion");
+        
     }
 
     // Update is called once per frame
@@ -40,7 +41,7 @@ public class GameManager : MonoBehaviour
         if (Cronometro == true)
         {
             
-            tiempo -= Time.deltaTime;
+            tiempo += Time.deltaTime;
             int minutos = (int)tiempo / 60;
             int segundos = (int)tiempo % 60;
             Debug.Log(minutos + ":" + segundos);
@@ -50,7 +51,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    void Perder()
+    public void Perder()
     {
         Personaje.SetActive(false);
         Fuego.SetActive(false);
@@ -60,7 +61,7 @@ public class GameManager : MonoBehaviour
         Cronometro = false;
     }
 
-    void ReiniciarJuego()
+    public void ReiniciarJuego()
     {
         Puntos = 0;
         Personaje.SetActive(true);
@@ -81,5 +82,6 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("mejorPuntuacion", mejorPuntuacion);
         }
     }
+
 }
 

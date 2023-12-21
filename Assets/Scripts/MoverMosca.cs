@@ -30,7 +30,8 @@ public class MoverMosca : MonoBehaviour
     }
     public void ReiniciarEnemigo()
     {
-        
+        transform.position = PInicial;
+        velocidad = 5;
     }
 
 }

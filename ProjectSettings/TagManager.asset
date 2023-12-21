@@ -4,8 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Mosca
-  - Fuego
+  - Enemigo
   layers:
   - Default
   - TransparentFX

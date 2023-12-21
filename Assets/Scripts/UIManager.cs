@@ -17,5 +17,7 @@ public class UIManager : MonoBehaviour
     {
         puntuacionActual.text = GameManager.Instancia.puntuacionActual.ToString();
         mejorPuntuacion.text = GameManager.Instancia.mejorPuntuacion.ToString();
+       
+
     }
 }

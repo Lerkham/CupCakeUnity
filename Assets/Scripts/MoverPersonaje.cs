@@ -40,21 +40,11 @@ public class MoverPersonaje : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.tag == "Fuego")
+        if (collision.transform.tag == "Enemigo")
         {
 
-            //gameObject.SetActive(false);
-            //Time.timeScale = 0;
-            //gameOver.SetActive(true);
-            //Destroy(collision.gameObject);
+            GameManager.Instancia.Perder();
         }
-        if (collision.transform.tag == "Mosca")
-        {
-
-            gameObject.SetActive(false);
-            Time.timeScale = 0;
-            gameOver.SetActive(true);
-            Destroy(collision.gameObject);
-        }
+        
     }
 }
