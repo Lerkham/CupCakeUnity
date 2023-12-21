@@ -8,6 +8,7 @@ public class ReiniciarNivel : MonoBehaviour
    public void Reiniciar()
     {
         SceneManager.LoadScene(0);
+        GameManager.Instancia.ReiniciarJuego();
     }
     
        

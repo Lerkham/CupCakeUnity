@@ -10,7 +10,8 @@ public class MoverPersonaje : MonoBehaviour
     [SerializeField] Rigidbody2D rigidbody;
     [SerializeField] Animator animator;
     [SerializeField] GameObject gameOver;
-
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip[] audioClip;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,12 +24,15 @@ public class MoverPersonaje : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
+            audioSource.clip= audioClip[0];
+            audioSource.Play();
             if (ComprobarSuelo.EsteEnElAire)
             {
                 rigidbody.AddForce(Vector2.up * alturaSalto);
                 
             }
         }
+        
         if (rigidbody.velocity.y > 0.1f || rigidbody.velocity.y < -0.1f)
         {
             animator.SetBool("EsteEnElAire", true);
@@ -44,6 +48,7 @@ public class MoverPersonaje : MonoBehaviour
         {
 
             GameManager.Instancia.Perder();
+
         }
         
     }

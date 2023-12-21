@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] TMP_Text texto;
     [SerializeField] MoverPersonaje controladorPersonaje;
     [SerializeField] bool Cronometro;
-    [SerializeField] MoverMosca Enemigo;
+    [SerializeField] MoverMosca Enemigo, Enemigo2;
     private void Awake()
     {
         if (Instancia == null)
@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cronometro = true;
         Boton.SetActive(false);
         Texto.SetActive(false);
         mejorPuntuacion = PlayerPrefs.GetInt("mejorPuntuacion");
@@ -72,6 +73,7 @@ public class GameManager : MonoBehaviour
         tiempo = 0;
         Cronometro = true;
         Enemigo.ReiniciarEnemigo();
+        Enemigo2.ReiniciarEnemigo();
     }
     public void SumarPunto()
     {
